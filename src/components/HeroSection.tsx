@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 
@@ -10,12 +9,10 @@ const HeroSection = () => {
       const heroContent = document.querySelector('.hero-content');
       
       if (parallaxBg) {
-        // Create parallax effect by moving the background slower than the scroll
         (parallaxBg as HTMLElement).style.transform = `translateY(${scrollPosition * 0.5}px)`;
       }
       
       if (heroContent) {
-        // Move the content in the opposite direction for enhanced effect
         (heroContent as HTMLElement).style.transform = `translateY(${scrollPosition * 0.2}px)`;
       }
     };
@@ -28,22 +25,19 @@ const HeroSection = () => {
   
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16 parallax">
-      {/* Background image - fixed for parallax effect */}
       <div 
         className="parallax-bg" 
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070")'
+          backgroundImage: 'url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
         }}
         aria-hidden="true"
       ></div>
       
-      {/* Background gradient overlay */}
       <div 
         className="absolute inset-0 bg-gradient-to-r from-event-primary/90 to-event-accent/80 mix-blend-multiply"
         aria-hidden="true"
       ></div>
       
-      {/* Floating shapes */}
       <div className="blob floating-slow" 
         style={{
           width: '300px', 
@@ -99,8 +93,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      
-      {/* Scroll indicator removed */}
     </section>
   );
 };
