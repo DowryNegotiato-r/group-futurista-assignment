@@ -2,47 +2,6 @@
 import React from 'react';
 import { Check, ExternalLink } from 'lucide-react';
 
-const sponsorshipTiers = [
-  {
-    name: 'Platinum',
-    price: '$10,000',
-    benefits: [
-      'Premium booth location',
-      'Logo on main stage',
-      '5 VIP event passes',
-      '15-minute keynote opportunity',
-      'Featured in all marketing materials',
-      'Social media promotion',
-      'Access to attendee contact list'
-    ]
-  },
-  {
-    name: 'Gold',
-    price: '$5,000',
-    benefits: [
-      'Large booth space',
-      'Logo on event banners',
-      '3 VIP event passes',
-      'Panel participation opportunity',
-      'Inclusion in marketing materials',
-      'Social media mention',
-      'Post-event attendee list'
-    ]
-  },
-  {
-    name: 'Silver',
-    price: '$2,500',
-    benefits: [
-      'Standard booth space',
-      'Logo on event website',
-      '2 event passes',
-      'Company description in program',
-      'Logo in digital program',
-      'Product literature in welcome bags'
-    ]
-  }
-];
-
 const SponsorshipSection = () => {
   return (
     <section id="sponsors" className="section bg-gray-50">
@@ -53,43 +12,6 @@ const SponsorshipSection = () => {
           <p className="text-gray-600 text-lg">
             Showcase your brand to industry leaders and decision-makers. Choose the sponsorship package that aligns with your marketing objectives.
           </p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {sponsorshipTiers.map((tier, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div 
-                className={`py-6 text-center text-white ${
-                  index === 0 ? 'bg-event-primary' : index === 1 ? 'bg-event-accent' : 'bg-event-secondary'
-                }`}
-              >
-                <h3 className="text-2xl font-bold">{tier.name}</h3>
-                <p className="text-3xl font-bold mt-2">{tier.price}</p>
-              </div>
-              
-              <div className="p-6">
-                <ul className="space-y-3 mb-8">
-                  {tier.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Check className="text-event-secondary mr-2 mt-1 flex-shrink-0" size={18} />
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <a 
-                  href="#sponsor-form" 
-                  className={`block text-center py-3 px-6 rounded-md transition-all ${
-                    index === 0 
-                      ? 'bg-event-primary text-white hover:bg-opacity-90' 
-                      : 'border border-event-primary text-event-primary hover:bg-event-primary hover:text-white'
-                  }`}
-                >
-                  Select Package
-                </a>
-              </div>
-            </div>
-          ))}
         </div>
         
         <div className="bg-white p-8 rounded-lg shadow-md" id="sponsor-form">
@@ -173,17 +95,17 @@ const SponsorshipSection = () => {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="package" className="block text-gray-700 mb-2">Interested Package *</label>
+                  <label htmlFor="package" className="block text-gray-700 mb-2">Sponsorship Interest *</label>
                   <select
                     id="package"
                     className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-event-primary"
                     required
                   >
-                    <option value="">Select a package</option>
-                    <option value="platinum">Platinum Sponsor - $10,000</option>
-                    <option value="gold">Gold Sponsor - $5,000</option>
-                    <option value="silver">Silver Sponsor - $2,500</option>
-                    <option value="custom">Custom Package</option>
+                    <option value="">Select your interest level</option>
+                    <option value="high">Very Interested</option>
+                    <option value="medium">Somewhat Interested</option>
+                    <option value="low">Just exploring options</option>
+                    <option value="custom">Interested in custom package</option>
                   </select>
                 </div>
                 
