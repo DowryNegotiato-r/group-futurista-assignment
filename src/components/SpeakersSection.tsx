@@ -43,38 +43,6 @@ const speakers: SpeakerProps[] = [
     image: 'https://randomuser.me/api/portraits/men/75.jpg',
     linkedin: '#',
     twitter: '#'
-  },
-  {
-    name: 'Priya Patel',
-    title: 'Cybersecurity Expert',
-    company: 'SecureNet',
-    image: 'https://randomuser.me/api/portraits/women/17.jpg',
-    linkedin: '#',
-    twitter: '#'
-  },
-  {
-    name: 'Robert Chen',
-    title: 'Blockchain Specialist',
-    company: 'Decentralized Systems',
-    image: 'https://randomuser.me/api/portraits/men/91.jpg',
-    linkedin: '#',
-    twitter: '#'
-  },
-  {
-    name: 'Lisa Wong',
-    title: 'UX Research Director',
-    company: 'Design Forward',
-    image: 'https://randomuser.me/api/portraits/women/53.jpg',
-    linkedin: '#',
-    twitter: '#'
-  },
-  {
-    name: 'James Taylor',
-    title: 'Cloud Architecture Lead',
-    company: 'CloudScale Solutions',
-    image: 'https://randomuser.me/api/portraits/men/45.jpg',
-    linkedin: '#',
-    twitter: '#'
   }
 ];
 
