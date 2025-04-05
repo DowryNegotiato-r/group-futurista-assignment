@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Linkedin, Twitter } from 'lucide-react';
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface SpeakerProps {
   name: string;
@@ -49,39 +50,75 @@ const speakers: SpeakerProps[] = [
 const SpeakerCard = ({ name, title, company, image, linkedin, twitter }: SpeakerProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md card-hover">
-      <div className="h-64 overflow-hidden">
+      <div className="h-64 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end justify-center p-4">
+          <div className="flex space-x-4">
+            {linkedin && (
+              <a href={linkedin} className="text-white hover:text-event-accent transition-colors p-2 bg-black/30 rounded-full">
+                <Linkedin size={20} />
+              </a>
+            )}
+            {twitter && (
+              <a href={twitter} className="text-white hover:text-event-accent transition-colors p-2 bg-black/30 rounded-full">
+                <Twitter size={20} />
+              </a>
+            )}
+          </div>
+        </div>
         <img 
           src={image} 
           alt={name} 
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform"
         />
       </div>
       <div className="p-6">
         <h3 className="font-bold text-xl text-gray-800">{name}</h3>
         <p className="text-event-primary font-medium">{title}</p>
         <p className="text-gray-600 mb-4">{company}</p>
-        <div className="flex space-x-4">
-          {linkedin && (
-            <a href={linkedin} className="text-gray-600 hover:text-event-primary transition-colors">
-              <Linkedin size={20} />
-            </a>
-          )}
-          {twitter && (
-            <a href={twitter} className="text-gray-600 hover:text-event-primary transition-colors">
-              <Twitter size={20} />
-            </a>
-          )}
-        </div>
       </div>
     </div>
   );
 };
 
 const SpeakersSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section id="speakers" className="section">
+    <section id="speakers" className="section relative overflow-hidden" ref={sectionRef}>
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-full h-64 bg-gradient-to-b from-gray-100 to-transparent"></div>
+      <div className="absolute top-1/2 left-0 w-24 h-24 bg-event-primary rounded-full opacity-10"></div>
+      <div className="absolute bottom-1/4 right-0 w-40 h-40 bg-event-accent rounded-full opacity-10"></div>
+      
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16 slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Speakers</h2>
           <div className="h-1 w-20 bg-event-accent mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
@@ -91,11 +128,18 @@ const SpeakersSection = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {speakers.map((speaker, index) => (
-            <SpeakerCard key={index} {...speaker} />
+            <div 
+              key={index} 
+              ref={el => cardsRef.current[index] = el}
+              className="staggered-item"
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <SpeakerCard {...speaker} />
+            </div>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center" ref={el => cardsRef.current[4] = el} className="staggered-item">
           <p className="text-gray-600 mb-6">
             More speakers to be announced soon. Stay tuned!
           </p>

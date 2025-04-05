@@ -1,12 +1,41 @@
 
-import React from 'react';
-import { Check, ExternalLink } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { Check } from 'lucide-react';
+import Illustrations from './Illustrations';
 
 const SponsorshipSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (contentRef.current) observer.observe(contentRef.current);
+    if (formRef.current) observer.observe(formRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section id="sponsors" className="section bg-gray-50">
+    <section id="sponsors" className="section bg-gray-50 relative" ref={sectionRef}>
+      {/* Decorative illustrations */}
+      <Illustrations type="dots" className="top-10 right-10 opacity-50" color="#8bc34a" />
+      <Illustrations type="circles" className="bottom-10 left-10" color="#4567b7" />
+      
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div ref={contentRef} className="text-center max-w-3xl mx-auto mb-16 slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Sponsorship Opportunities</h2>
           <div className="h-1 w-20 bg-event-accent mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg">
@@ -14,7 +43,7 @@ const SponsorshipSection = () => {
           </p>
         </div>
         
-        <div className="bg-white p-8 rounded-lg shadow-md" id="sponsor-form">
+        <div ref={formRef} className="bg-white p-8 rounded-lg shadow-md slide-up" id="sponsor-form" style={{ transitionDelay: '200ms' }}>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800">Become a Sponsor</h3>
@@ -134,7 +163,7 @@ const SponsorshipSection = () => {
                 
                 <button
                   type="submit"
-                  className="btn-primary w-full"
+                  className="btn-primary w-full transform transition-transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Submit Interest
                 </button>
