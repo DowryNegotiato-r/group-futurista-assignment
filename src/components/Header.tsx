@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -26,7 +25,7 @@ const Header = () => {
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <div className="text-event-primary font-bold text-2xl">
-            <span className="text-event-accent">NEXT</span>SUMMIT
+            <span className="text-event-accent">GROUP</span>FUTURISTA
           </div>
         </div>
         
@@ -92,4 +91,3 @@ const Header = () => {
 };
 
 export default Header;
-

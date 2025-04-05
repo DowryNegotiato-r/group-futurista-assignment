@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="text-2xl font-bold mb-4">
-              <span className="text-event-accent">NEXT</span>SUMMIT
+              <span className="text-event-accent">GROUP</span>FUTURISTA
             </div>
             <p className="text-gray-400 mb-6">
               The premier tech event bringing together industry leaders and innovators for three days of learning and networking.

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 
@@ -66,7 +67,7 @@ const HeroSection = () => {
             April 15-17, 2025
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in" style={{animationDelay: '0.4s'}}>
-            The Future of Innovation & Technology
+            Group Futurista: Tech Innovation Summit
           </h1>
           <p className="text-xl opacity-90 mb-8 max-w-lg animate-fade-in" style={{animationDelay: '0.6s'}}>
             Join industry leaders and innovators for three days of inspiring talks, 
