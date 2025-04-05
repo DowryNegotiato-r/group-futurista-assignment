@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -31,10 +32,10 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#home" className="text-event-primary hover:text-event-accent font-medium">Home</a>
-          <a href="#about" className="text-event-primary hover:text-event-accent font-medium">About</a>
-          <a href="#speakers" className="text-event-primary hover:text-event-accent font-medium">Speakers</a>
-          <a href="#sponsors" className="text-event-primary hover:text-event-accent font-medium">Sponsors</a>
+          <a href="#home" className="text-white hover:text-white/80 font-medium">Home</a>
+          <a href="#about" className="text-white hover:text-white/80 font-medium">About</a>
+          <a href="#speakers" className="text-white hover:text-white/80 font-medium">Speakers</a>
+          <a href="#sponsors" className="text-white hover:text-white/80 font-medium">Sponsors</a>
           <a href="#register" className="btn-primary">Register Now</a>
         </nav>
         
@@ -50,28 +51,28 @@ const Header = () => {
           <div className="container-custom flex flex-col space-y-4 pt-4">
             <a 
               href="#home" 
-              className="text-event-primary hover:text-event-accent font-medium py-2"
+              className="text-white hover:text-white/80 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a 
               href="#about" 
-              className="text-event-primary hover:text-event-accent font-medium py-2"
+              className="text-white hover:text-white/80 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </a>
             <a 
               href="#speakers" 
-              className="text-event-primary hover:text-event-accent font-medium py-2"
+              className="text-white hover:text-white/80 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Speakers
             </a>
             <a 
               href="#sponsors" 
-              className="text-event-primary hover:text-event-accent font-medium py-2"
+              className="text-white hover:text-white/80 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Sponsors
