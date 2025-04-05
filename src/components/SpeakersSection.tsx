@@ -139,7 +139,11 @@ const SpeakersSection = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center" ref={el => cardsRef.current[4] = el} className="staggered-item">
+        <div 
+          className="mt-12 text-center staggered-item" 
+          ref={el => cardsRef.current[4] = el}
+          style={{ transitionDelay: "600ms" }}
+        >
           <p className="text-gray-600 mb-6">
             More speakers to be announced soon. Stay tuned!
           </p>

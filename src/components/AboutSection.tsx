@@ -88,7 +88,11 @@ const AboutSection = () => {
             </div>
           </div>
           
-          <div className="order-1 md:order-2" ref={el => itemsRef.current[4] = el} className="staggered-item" style={{ transitionDelay: '400ms' }}>
+          <div 
+            className="order-1 md:order-2 staggered-item" 
+            ref={el => itemsRef.current[4] = el} 
+            style={{ transitionDelay: '400ms' }}
+          >
             <div className="relative">
               {/* Decorative element */}
               <div className="absolute -top-4 -left-4 w-16 h-16 bg-event-secondary/20 rounded-full floating-slow"></div>
