@@ -43,6 +43,41 @@ const SponsorshipSection = () => {
           </p>
         </div>
         
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="slide-up" style={{ transitionDelay: '200ms' }}>
+            <img 
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=6052&h=4035&auto=format&fit=crop" 
+              alt="Tech conference sponsors" 
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
+            />
+          </div>
+          
+          <div className="slide-up" style={{ transitionDelay: '400ms' }}>
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">Our Past Sponsors</h3>
+            <p className="text-gray-600 mb-6">
+              We're proud to have partnered with leading technology companies and innovators who share our vision for advancing the tech industry.
+            </p>
+            <ul className="space-y-3 mb-6">
+              <li className="flex items-start">
+                <Check className="text-event-secondary mr-2 mt-1" size={18} />
+                <span>Fortune 500 technology leaders</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="text-event-secondary mr-2 mt-1" size={18} />
+                <span>Cutting-edge startups and scaleups</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="text-event-secondary mr-2 mt-1" size={18} />
+                <span>Educational institutions and research organizations</span>
+              </li>
+              <li className="flex items-start">
+                <Check className="text-event-secondary mr-2 mt-1" size={18} />
+                <span>Industry associations and media partners</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
         <div ref={formRef} className="bg-white p-8 rounded-lg shadow-md slide-up" id="sponsor-form" style={{ transitionDelay: '200ms' }}>
           <div className="grid md:grid-cols-2 gap-12">
             <div>

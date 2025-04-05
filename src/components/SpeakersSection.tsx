@@ -17,7 +17,7 @@ const speakers: SpeakerProps[] = [
     name: 'Alexandra Chen',
     title: 'Chief Technology Officer',
     company: 'Future Tech Inc.',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=7952&h=5304&auto=format&fit=crop',
     linkedin: '#',
     twitter: '#'
   },
@@ -25,7 +25,7 @@ const speakers: SpeakerProps[] = [
     name: 'Michael Rodriguez',
     title: 'Director of Innovation',
     company: 'Global Solutions',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
+    image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=5304&h=7952&auto=format&fit=crop',
     linkedin: '#',
     twitter: '#'
   },
@@ -33,7 +33,7 @@ const speakers: SpeakerProps[] = [
     name: 'Sarah Johnson',
     title: 'VP of Product',
     company: 'TechVision Corp',
-    image: 'https://randomuser.me/api/portraits/women/68.jpg',
+    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=8256&h=5504&auto=format&fit=crop',
     linkedin: '#',
     twitter: '#'
   },
@@ -41,7 +41,7 @@ const speakers: SpeakerProps[] = [
     name: 'David Kim',
     title: 'AI Research Lead',
     company: 'NextGen AI',
-    image: 'https://randomuser.me/api/portraits/men/75.jpg',
+    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=5760&h=3840&auto=format&fit=crop',
     linkedin: '#',
     twitter: '#'
   }
