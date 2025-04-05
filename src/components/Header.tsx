@@ -26,7 +26,8 @@ const Header = () => {
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <div className="text-event-primary font-bold text-2xl">
-            <span className="text-event-accent">GROUP</span>FUTURISTA
+            <span className="text-event-accent mr-2">GROUP</span>
+            <span className="text-white">FUTURISTA</span>
           </div>
         </div>
         
